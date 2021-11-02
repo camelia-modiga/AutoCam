@@ -1,0 +1,61 @@
+<body>
+    <div>
+        <p class="ptitlu">Rezervarea a fost realizată cu succes!!</p>
+        <p class="ptitlu" style="font-size: 25px;">Vă mulțumim ca ați ales AutoCam!</p>
+    </div>
+
+    <div class="item-image">
+        <img src="imagini/happy.png" alt="no image" width="400" height="350">
+    </div>
+
+    <button class="button" style="position: absolute;top: 1000px;left: 720px;" id="vezirezervare">Vezi detaliile rezervării</button>
+    <br><br><br><br><br><br>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <% listResults.forEach(function(data) {%>
+
+
+                <div>
+
+                    <i class="fa fa-map-marker"></i>
+                    <span class="description-title"> Locație ridicare:</span>
+                    <%= data.locatie_preluare%><br><br>
+
+                        <i class="fa fa-map-marker"></i>
+                        <span class="description-title">Locație returnare:</span>
+                        <%= data.locatie_returnare%><br><br>
+
+                            <i class="fa fa-calendar"></i>
+                            <span class="description-title">Data ridicare:</span>
+                            <%= data.data_inchiriere%><br><br>
+
+                                <i class="fa fa-calendar"></i>
+                                <span class="description-title">Data returnare:</span>
+                                <%= data.data_retur%><br><br>
+
+                                    <i class="fa fa-car"></i>
+                                    <span class="description-title">Mașina selectată:</span>
+                                    <%= data.masina_selectata%><br><br>
+
+                                        <i class="fa fa-user"></i>
+                                        <span class="description-title">Nume client:</span>
+                                        <%= data.nume_client%><br><br>
+
+                                            <i class="fa fa-credit-card"></i>
+                                            <span class="description-title">Tarif dotări:</span>
+                                            <%= data.tarif_dotari%> EURO<br><br>
+
+                                                <i class="fa fa-credit-card"></i>
+                                                <span class="description-title">Total:</span>
+                                                <%= data.tarif%> EURO<br><br>
+
+                </div>
+
+                <%});%>
+        </div>
+    </div>
+    <script src="/modal.js"></script>
+</body>

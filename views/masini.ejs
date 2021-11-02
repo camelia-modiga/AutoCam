@@ -1,0 +1,98 @@
+<%if(mesaj){%>
+    <h2 class="ptitlu" style="color: darkred;">
+        Bine ai venit,
+        <%=mesaj%>!
+    </h2>
+    <%}%>
+        <%if(log!= ' '){%>
+
+
+
+            <% listResults.forEach(function(data) {%>
+                <hr>
+
+                <div class="item-image">
+                    <img src="imagini/masini/<%= data.marca%>.jpg" alt="no image" width="400" height="250">
+                </div>
+                <div class="block_container">
+                    <div>
+                        <span style="font-size: 20px;"><%= data.marca%></span><br><br>
+
+                        <i class="fa fa-tachometer"></i>
+                        <span class="description-title"> Carburant:</span>
+                        <%= data.carburant%><br><br>
+
+                            <i class="fa fa-car"></i>
+                            <span class="description-title">Clasa:</span>
+                            <%= data.clasa%><br><br>
+
+                                <i class="fa fa-cogs"></i>
+                                <span class="description-title">Cutie Viteze:</span>
+                                <%= data.transmisie%><br><br>
+
+                                    <i class="fa fa-bar-chart"></i>
+                                    <span class="description-title">Consum:</span>
+                                    <%= data.consum%> l/100 km<br><br>
+
+                                        <i class="fa fa-users"></i>
+                                        <span class="description-title">Capacitate Pasageri:</span>
+                                        <%= data.capacitate_pasageri%><br><br>
+
+                                            <i class="fa fa-credit-card"></i>
+                                            <span class="description-title">Preț de la:</span>
+                                            <%= data.tarif%> EURO / zi<br><br>
+                    </div>
+
+                </div>
+                <form action="/rezerva" method="POST">
+                    <button id="myBtnn" style=" font-size: 14px; border: 2px solid #585858;background: #a90c2c;color: white;" type="submit">Rezervă</button>
+                    <input type="hidden" name="id" value="<%=data.id_masina%>">
+                    <input type="hidden" name="tarif" value="<%=data.tarif%>">
+                    <input type="hidden" name="marca" value="<%=data.marca%>">
+                </form>
+
+                <%});%>
+
+
+                    <hr>
+                    <%} else {%>
+                        <h2 class="ptitlu">Trebuie să vă autentificați pentru a putea închiria!!</h2>
+
+                        <% listResults.forEach(function(data) {%>
+                            <hr>
+
+                            <div class="item-image">
+                                <img src="imagini/masini/<%= data.marca%>.jpg" alt="no image" width="400" height="250">
+                            </div>
+                            <div class="block_container">
+                                <div>
+                                    <span style="font-size: 20px;"><%= data.marca%></span><br><br>
+
+                                    <i class="fa fa-tachometer"></i>
+                                    <span class="description-title"> Carburant:</span>
+                                    <%= data.carburant%><br><br>
+
+                                        <i class="fa fa-car"></i>
+                                        <span class="description-title">Clasa:</span>
+                                        <%= data.clasa%><br><br>
+
+                                            <i class="fa fa-cogs"></i>
+                                            <span class="description-title">Cutie Viteze:</span>
+                                            <%= data.transmisie%><br><br>
+
+                                                <i class="fa fa-bar-chart"></i>
+                                                <span class="description-title">Consum:</span>
+                                                <%= data.consum%> l/100 km<br><br>
+
+                                                    <i class="fa fa-users"></i>
+                                                    <span class="description-title">Capacitate Pasageri:</span>
+                                                    <%= data.capacitate_pasageri%><br><br>
+
+                                                        <i class="fa fa-credit-card"></i>
+                                                        <span class="description-title">Preț de la:</span>
+                                                        <%= data.tarif%> EURO / zi<br><br>
+                                </div>
+                            </div>
+                            <%});%>
+                                <% } %>
+                                    <hr>

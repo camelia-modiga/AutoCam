@@ -1,0 +1,24 @@
+<form action="/verificare-autentificare" method="post">
+    <br><br>
+
+    <p class="ptitlu">Bine ați venit!</p>
+    <img src="imagini\login.jpg" alt="login" style="position: absolute;left:20px;top:750px"><br><br>
+
+    <label for="username" class="ptitlu" style="font-size: 20px; margin-right: 10px;"><b>Email</b></label>
+    <input type="text" name="username" required><br><br>
+
+    <label for="parola" class="ptitlu" style="font-size: 20px; margin-right: 10px;"><b>Parola</b></label>
+    <input type="password" name="parola" required><br><br><br>
+
+    <button class="button" type="submit" style="margin-right: 700px;">Autentificare</button><br><br>
+    <a href="/cont_nou">Nu aveți cont?</a>
+    <%if(mesaj!=null){%>
+        <p style="color: red; font-weight: bold;">
+            <%=mesaj%>
+        </p>
+        <%}%>
+</form>
+
+
+
+<br><br>

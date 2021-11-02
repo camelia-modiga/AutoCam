@@ -1,0 +1,48 @@
+<body>
+    <%if(mesaj_eroare){%>
+        <h2 class="ptitlu" style="color: red;">
+
+            <%=mesaj_eroare%>
+        </h2>
+        <%}%>
+            <form action="/dotari" method="POST">
+
+                <p class="ptitlu"> Închiriază o Mașină Simplu și Rapid </p>
+
+                <div class="box" style="color: aliceblue; font-size: 25px;">
+
+                    <div class="location1">
+                        <br><label for="locatie1">Alege locația de preluare</label><br><br>
+                        <select style="font-size: 17px;" name="locatie1" id="locatie1">
+                                    <option value="">Alege locația de preluare</option>
+                                    <option value="Aeroport Iasi">Aeroport Iași</option>
+                                    <option value="Iasi">Iași</option>
+                                </select>
+                        <br><br>
+                        <label for="inchiriere">Dată închiriere:</label>
+                        <input type="date" id="inchiriere" name="inchiriere"><br><br>
+                    </div>
+
+                    <div class="location2">
+                        <br><label for="locatie2">Alege locația de predare</label><br><br>
+                        <select style="font-size: 17px;" name="locatie2" id="locatie2">
+                                    <option value="">Alege locația de predare</option>
+                                    <option value="Aeroport Iasi">Aeroport Iași</option>
+                                    <option value="Iasi">Iași</option>
+                                </select>
+                        <br><br>
+                        <label for="predate">Dată predare:</label>
+                        <input type="date" id="predare" name="predare"><br><br>
+                    </div>
+
+                    <br><br><br><br><br><br>
+                    <br>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <input type="hidden" name="id" value="<%=id%>">
+                <input type="hidden" name="tarif" value="<%=tarif%>">
+                <input type="hidden" name="masina_selectata" value="<%=masina_selectata%>">
+                <button style=" font-size: 14px; border: 2px solid #585858;background: #a90c2c;color: white;" type="submit">Continuă</button>
+
+            </form>
+</body>

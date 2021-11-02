@@ -1,0 +1,34 @@
+<body>
+    <% listResults.forEach(function(data) {%>
+        <hr>
+
+        <div class="item-image">
+            <img src="imagini/dotari/<%= data.denumire_dotare%>.png" alt="no image" width="80" height="80">
+        </div>
+        <div class="block_container">
+            <div>
+                <span style="font-size: 20px;"><%= data.denumire_dotare%></span><br><br>
+
+                <i class="fa fa-credit-card"></i>
+                <span class="description-title">Preț de la:</span>
+                <%= data.tarif_dotare%> EURO / zi<br><br>
+            </div>
+
+        </div>
+        <form action="/finalizeaza-rezervare" method="POST">
+
+            <button id="myBtnn" style=" font-size: 14px; border: 2px solid #585858;background: #a90c2c;color: white;" type="submit">Rezervă</button>
+            <input type="hidden" name="tarif_dotare" value="<%=data.tarif_dotare%>">
+            <input type="hidden" name="id" value="<%=id%>">
+            <input type="hidden" name="tarif" value="<%=tarif%>">
+            <input type="hidden" name="masina_selectata" value="<%=masina_selectata%>">
+            <input type="hidden" name="locatie_preluare" value="<%=locatie_preluare%>">
+            <input type="hidden" name="locatie_predare" value="<%=locatie_predare%>">
+            <input type="hidden" name="data_inchiriere" value="<%=data_inchiriere%>">
+            <input type="hidden" name="data_retur" value="<%=data_retur%>">
+
+        </form>
+
+        <%});%>
+            <hr>
+</body>
